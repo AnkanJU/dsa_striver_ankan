@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public: int isPerfect(int n) {
+        if (n <= 1) return 0; // 0 and 1 are not perfect numbers
+        int sum = 0;
+        for (int i = 1; i <= n / 2; ++i) {
+            if (n % i == 0) {
+                sum += i;
+            }
+        }
+        return sum == n;
+    }        
+};
+int main() {
+    int n;
+    cin >> n;
+    Solution ank;
+    if (ank.isPerfect(n)) {
+        cout << n << " is a perfect number." << endl;
+    } else {
+        cout << n << " is not a perfect number." << endl;
+    }
+    return 0;
+}
